@@ -1,6 +1,6 @@
 ## Updates Of this fork 
 
-##Not vibe coded but still AI was used for bundling the WASM part and CSS
+## Not vibe coded but still AI was used for bundling the WASM part and CSS
 
 Rewrite for Firefox with a local Stockfish engine instead of chess.com’s.
 
