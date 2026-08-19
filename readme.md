@@ -6,7 +6,7 @@ Rewrite for Firefox with a local Stockfish engine instead of chess.com’s.
 
 - **Bundled Stockfish WASM** (ASM.js fallback) — no longer uses chess.com’s worker
 - **Dynamic red squares** — highlights update during search when a better move is found
-- **Multiple lines  — switch with the on-page panel, Tab / Shift+Tab, or keys 1–5
+- **Multiple lines**  — switch with the on-page panel, Tab / Shift+Tab, or keys 1–5
 - **Keeps analyzing after each move** — new positions are queued instead of stalling the engine
 - **Popup controls** — Start / Stop, depth, and number of lines (no injected page button so less detectable)
 
