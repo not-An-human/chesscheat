@@ -1,23 +1,36 @@
 {
-  "manifest_version": 3,
-  "name": "Chesscheat",
-  "version": "1.3",
-  "icons": { "16": "icon.png",
-  "48": "icon.png",
- "128": "icon.png" },
- "browser_specific_settings": {
-  "gecko": {
-    "id": "chesscheatextension@gmail.com"
-  }
-},
-  "description": "Always see the optimal move in any chess.com game. Guarantees wins almost 100% of the time",
-  "content_scripts": [
-    {
-      "js": ["scripts/main.js"],
-      "matches": [
-        "https://www.chess.com/*",
-        "https://chess.com/*"
-      ]
+  "manifest_version": 2,
+  "name": "Chess Analyzer",
+  "version": "2.6",
+  "description": "Analyzes chess.com games with bundled Stockfish",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "chess-analyzer@local",
+      "strict_min_version": "91.0"
     }
-  ]
+  },
+  "browser_action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Chess Analyzer"
+  },
+  "background": {
+    "scripts": ["scripts/background.js"]
+  },
+  "content_scripts": [{
+    "js": ["scripts/content.js"],
+    "matches": ["https://www.chess.com/*", "https://chess.com/*"],
+    "run_at": "document_idle"
+  }],
+  "permissions": ["tabs", "https://www.chess.com/*", "https://chess.com/*"],
+  "content_security_policy": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';",
+  "web_accessible_resources": [
+    "engines/stockfish.js",
+    "engines/stockfish.wasm",
+    "engines/stockfish-asm.js"
+  ],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
 }

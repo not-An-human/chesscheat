@@ -10,13 +10,13 @@
     "type": "git",
     "url": "git+https://github.com/Eugenenoble2005/chesscheat.git"
   },
-  "author": "",
+  "author": "meee",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Eugenenoble2005/chesscheat/issues"
   },
   "homepage": "https://github.com/Eugenenoble2005/chesscheat#readme",
   "dependencies": {
-    "stockfish.wasm": "^0.10.0"
+    "stockfish": "^18.0.0"
   }
 }
